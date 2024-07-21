@@ -1,0 +1,6 @@
+{
+  "@quasar/qcalendar": {},
+  "@quasar/qmarkdown": {
+    "import_md": true
+  }
+}
