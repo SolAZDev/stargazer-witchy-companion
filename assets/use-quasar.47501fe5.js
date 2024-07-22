@@ -1,0 +1,1 @@
+import{g as a,z as o,f as r,A as i,F as m,G as l}from"./index.76eb1d92.js";function c(){let e=null;const n=a();function t(){e!==null&&(clearTimeout(e),e=null)}return o(t),r(t),{removeTimeout:t,registerTimeout(u,s){t(),i(n)===!1&&(e=setTimeout(()=>{e=null,u()},s))}}}function T(){return m(l)}export{T as a,c as u};
