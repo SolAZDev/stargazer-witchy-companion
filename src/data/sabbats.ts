@@ -1,4 +1,4 @@
-import { SabbatInfo } from 'src/models/witchy.model';
+import type { SabbatInfo } from 'src/models/witchy.model';
 export default [
   {
     content: 'info/sabbats/01-Imbolc.md',

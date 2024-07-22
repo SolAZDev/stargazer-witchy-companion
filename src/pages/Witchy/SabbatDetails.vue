@@ -11,13 +11,10 @@ import { useRoute } from 'vue-router';
 const sabbat = ref(sabbats[0]);
 const content = ref('');
 const route = useRoute();
-onMounted(() => {
-  sabbat.value = sabbats[route.params['id'] as unknown as number];
-  getContent();
-});
 
-async function getContent() {
+onMounted(async () => {
+  sabbat.value = sabbats[route.params['id'] as unknown as number];
   const data = await (await fetch(sabbat.value.content)).text();
   if (data != null) content.value = data as unknown as string;
-}
+});
 </script>

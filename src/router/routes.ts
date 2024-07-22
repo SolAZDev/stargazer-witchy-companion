@@ -14,6 +14,14 @@ const routes: RouteRecordRaw[] = [
         path: '/sabbats/:id',
         component: () => import('pages/Witchy/SabbatDetails.vue'),
       },
+      {
+        path: '/dreams',
+        component: () => import('pages/Dreams/DreamsMain.vue'),
+      },
+      {
+        path: '/dreams/symbols/:id',
+        component: () => import('pages/Dreams/DreamSymbol.vue'),
+      },
     ],
   },
 

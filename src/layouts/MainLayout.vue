@@ -1,17 +1,17 @@
-<template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-toolbar-title> Stargazer's Witchy Companion </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+<template lang="pug">
+q-layout(view='hHh lpR fFf')
+    q-header.bg-primary.text-white(elevated)
+      q-toolbar
+        q-btn(dense='' flat='' round='' icon='menu' @click='toggleLeftDrawer')
+          q-toolbar-title Stargazer's Witchy Companion
+    q-drawer(v-model='leftDrawerOpen' side='left' overlay elevated)
+      q-list(bordered)
+        q-item(clickable, v-ripple)
+          q-item-section(avatar)
+            q-icon(color='primary', name='bluetooth')
+          q-item-section Icon as avatar
+    q-page-container
+      router-view
 </template>
 
 <script setup lang="ts">
@@ -21,53 +21,7 @@ defineOptions({
   name: 'MainLayout',
 });
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-];
-
 const leftDrawerOpen = ref(false);
-
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
